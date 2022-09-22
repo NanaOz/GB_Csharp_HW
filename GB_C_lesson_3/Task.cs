@@ -21,9 +21,9 @@ namespace ConsoleApp3
         }
 
         //Задача 19 Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом.
-        public void task_19()
+        public void task_19_var1()
         {
-            Console.WriteLine("ЗАДАЧА №19");
+            Console.WriteLine("ЗАДАЧА №19 (первый вариант решения задачи)");
             Console.WriteLine("Введите пятизначное число: ");
             string num = Console.ReadLine() !;
             int len = num.Length;
@@ -31,6 +31,39 @@ namespace ConsoleApp3
             if (len == 5)
             {
                 if (num[0] == num[4] && num[1] == num[3])
+                {
+                    Console.WriteLine($"{num} - Палиндром");
+                }
+                else
+                {
+                    Console.WriteLine($"{num} - Не палиндром");
+                }
+            }
+            else
+            {
+                Console.WriteLine($"{num} - нужно вести пятизначное число");
+            }
+            BeautuLine();
+
+        }
+
+        //второй вариант(математический) решения задачи №19
+         public void task_19_var2()
+        {
+            Console.WriteLine("ЗАДАЧА №19(второй вариант кода):D");
+            Console.WriteLine("Введите пятизначное число: ");
+            int num = Math.Abs(Input());
+
+            int one = num / 10000 %10;
+            int two = num / 1000 % 10;
+            int three = num / 100 % 10;
+            int four = num / 10 % 10;
+            int five = num % 10;
+            
+
+            if (num > 9999 && num < 100000)
+            {
+                if (one == five && two == four)
                 {
                     Console.WriteLine($"{num} - Палиндром");
                 }
@@ -84,9 +117,11 @@ namespace ConsoleApp3
             Console.WriteLine("Введите число: ");
             int number = Input();
 
+            Console.WriteLine("Число\tКуб");
+
             for (int i = 1; i <= number; i++)
             {
-                Console.Write($"{i * i * i} ");
+                Console.WriteLine("{0}\t{1}\t", i, Math.Pow(i,3));
             }
 
         }
