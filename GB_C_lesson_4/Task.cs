@@ -56,14 +56,29 @@ namespace ConsoleApp4
             Console.WriteLine("Массив: ");
             enter.PrintArray(arr);
             Console.WriteLine("Сортировка массива была выпонена методом пузырька:  ");
+            // for (int i = 0; i < arr.Length; i++)
+            //     for (int j = i + 1; j < arr.Length; j++)
+            //         if (arr[i] > arr[j])
+            //         {
+            //             int temp = arr[i];
+            //             arr[i] = arr[j];
+            //             arr[j] = temp;
+            //         }
+
             for (int i = 0; i < arr.Length; i++)
-                for (int j = i + 1; j < arr.Length; j++)
-                    if (arr[i] > arr[j])
+            {
+                for (int j = i; j < arr.Length; j++)
+                {
+                    if (Math.Abs(arr[i]) < Math.Abs(arr[j]))
                     {
                         int temp = arr[i];
                         arr[i] = arr[j];
                         arr[j] = temp;
                     }
+                }
+            }
+
+
             enter.PrintArray(arr);
             enter.BeautuLine();
         }
