@@ -41,7 +41,8 @@ namespace ConsoleApp5
                     MenuSelect();
                     break;
                 case 0:
-                    MenuExit();
+                    // MenuExit();
+                    Environment.Exit(0);
                     break;
                 default:
                     Console.WriteLine("ошибка - такой задачи не существует!");
