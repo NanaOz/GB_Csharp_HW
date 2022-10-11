@@ -37,7 +37,7 @@ namespace ConsoleApp4
 
             int sum = 0;
             for (int i = 3; i >= 0; i--)
-            {
+            {   
                 sum += num / (int)Math.Pow(10.0, i);
                 num = num % (int)Math.Pow(10.0, i);
             }
